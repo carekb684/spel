@@ -14,19 +14,25 @@ public class Gubbe {
     final int H = 40;
     double vx, vy;
     double G = 0.2;
-   
+    static String character="";
     
     void paint(Graphics g) {
 
         
-        if(vx<0 ){
-            
-            g.drawImage(ImageHandler.get("gubbe.png"),(int)x+W,(int)y,-W,H,null);
+        if(character.equals("Carl") || character.equals("")){
+            g.drawImage(ImageHandler.get("Carl.png"),(int)x+W,(int)y,-W,H,null);
         }
-        else{
-            
-            g.drawImage(ImageHandler.get("gubbe.png"),(int)x,(int)y,W,H,null);
+        if(character.equals("Tim")){
+            g.drawImage(ImageHandler.get("Tim.png"),(int)x+W,(int)y,-W,H,null);
         }
+       if(character.equals("Erik")){
+            g.drawImage(ImageHandler.get("Erik2.png"),(int)x+W,(int)y,-W,H,null);
+        }
+       if(character.equals("Philip")){
+            g.drawImage(ImageHandler.get("Philip.png"),(int)x+W,(int)y,-W,H,null);
+        }
+        
+        
     }
     
     void moveHoriz(KeyLi keyLi) {

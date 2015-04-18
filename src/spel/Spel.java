@@ -85,11 +85,18 @@ public class Spel extends Applet implements Runnable {
 
     @Override
     public void paint(Graphics g) {
-        g.setColor(Color.BLUE);
+        
+        for (Tile tile : banaList) {
+            tile.paint(g);
+        }
+        
         String str = String.format("%d.%d", (System.currentTimeMillis() - millis) / 1000, ((System.currentTimeMillis() - millis) / 100) % 10);
+        g.setColor(Color.BLUE);
         g.setFont(new Font("Calibri", Font.PLAIN, 40));
         g.drawString(str, 100, 65);
 
+        
+        
         int yCordTime = 0;
         for (int i = 0; i < BanCreator.level; i++) {
             g.setFont(new Font("Calibri", Font.PLAIN, 20));
@@ -97,9 +104,7 @@ public class Spel extends Applet implements Runnable {
             yCordTime += 35;
         }
 
-        for (Tile tile : banaList) {
-            tile.paint(g);
-        }
+        
 
         gubbe.paint(g);
     }
@@ -129,7 +134,7 @@ public class Spel extends Applet implements Runnable {
 
     long millis;
     Gubbe gubbe = new Gubbe();
-    String[] strBanaTid = {"", "", "", "", "", ""};
+    String[] strBanaTid = {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""};
     ArrayList<Tile> banaList = new ArrayList();
-
+    
 }

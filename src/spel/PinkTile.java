@@ -3,8 +3,9 @@ package spel;
 import java.awt.Color;
 import java.util.ArrayList;
 
-
 public class PinkTile extends Tile {
+
+    
 
     public PinkTile(int x, int y, int w) {
         super(x, y, w);
@@ -19,7 +20,6 @@ public class PinkTile extends Tile {
     @Override
     boolean playWith(Gubbe gubbe, ArrayList<Tile> banaList) {
         if (intersects(gubbe.x, gubbe.y, gubbe.W, gubbe.H)) {
-            
             ArrayList stiffs = new ArrayList();
             for (Tile tile : banaList) {
                 if (tile.removable) {
@@ -32,5 +32,9 @@ public class PinkTile extends Tile {
 
         return false;
     }
+    
+    
+    
+    
 
 }
